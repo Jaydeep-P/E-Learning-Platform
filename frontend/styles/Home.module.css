@@ -1,0 +1,14 @@
+.container
+{
+    background-color: gray;
+    height:50px;
+}
+.imglogo
+{
+    height:50px;
+    width:50px;
+}
+.btn
+{
+    margin-left:90% ;
+}
