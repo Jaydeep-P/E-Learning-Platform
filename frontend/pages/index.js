@@ -1,19 +1,45 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import { useState,useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Home" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    const [message, setMessage] = useState('');
+    const [auth, setAuth] = useState(false);
+    const router = useRouter();
+    useEffect(() => {
+        (
+            async () => {
+                try {
+                    const response = await fetch('http://localhost:8000/api/user', {
+                        credentials: 'include',
+                    });
 
-      <main className={styles.main}>
-        <h1>Home
-        </h1>
-      </main>
-    </div>
-  )
+                    const content = await response.json();
+
+                    console.log(content)
+                    if(content.name=='student'){
+                      router.push(`/student/${content.id}`)
+                    }
+                    else if(content.name=='teacher'){
+                      router.push(`/teacher/${content.id}`)
+                    }
+                    else if(content.name=='admin'){
+                      router.push(`/admin`)
+                    }
+                    // setMessage(`Hi ${content.name}`);
+                    setAuth(true);
+                } catch (e) {
+                  console.error(e)
+                  router.push(`/login`)
+                }
+            }
+        )();
+    });
+
+    return (
+        <div>
+            {message}
+        </div>
+    )
 }

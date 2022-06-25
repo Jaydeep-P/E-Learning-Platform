@@ -6,23 +6,41 @@ import {useRouter} from 'next/router'
 export default function Login() {
   const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [loggedIn, setLogedin] = useState(false);
     const router = useRouter();
 
     const submit = async (e) => {
-        e.preventDefault();
+      e.preventDefault();
 
-        const res = await fetch('http://localhost:8000/api/login/', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            credentials: 'include',
-            body: JSON.stringify({
-                email,
-                password
-            })
-        });
+      let res = await fetch('http://localhost:8000/api/login/', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          credentials: 'include',
+          body: JSON.stringify({
+              email,
+              password
+          })
+      });
 
-        await router.push('/');
-    }
+      res = await res.json()
+
+      if(res.detail!=="User not found!" ){
+        setLogedin(true);
+      }
+      
+
+      let jwt = res.jwt;
+      console.log(res)
+      if(jwt){
+
+      }
+      setLogedin(true);
+
+      if(loggedIn){
+        router.push('/')
+      }
+      
+  }
     
 
 
@@ -32,7 +50,7 @@ export default function Login() {
         <div className={styles.divL}>
          
             <form  className={styles.formL} onSubmit={submit}>
-            <h1>Please Sign in</h1>
+            <h1>{loggedIn?'Incorrect credentials':'Please Sign in'}</h1>
                 <div>
                     <label >Email:</label>
                     <div>
