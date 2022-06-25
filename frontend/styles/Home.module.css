@@ -9,6 +9,7 @@
 {
     margin-left:90% ;
 }
+<<<<<<< HEAD
 
 .logo{
     position: relative;
@@ -58,4 +59,11 @@
  }
  .list2 a:hover{
     text-decoration:underline;
+=======
+.Logo{
+    height:100%;
+    aspect-ratio:1/1;
+    position: relative;
+    width:50px;
+>>>>>>> a154e71581845f24dc8f7738ec12555359618caa
 }

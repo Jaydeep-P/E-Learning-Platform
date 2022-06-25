@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "../../styles/studentcomponents.module.css"
-import Course1 from './coursecomponents/Course1'
+import Course1 from '../coursecomponents/Course1'
 import Link from 'next/link'
 function SContent() {
     
