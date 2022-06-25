@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-pp#pqiuy0h%578x)_!3=7go=4nosro+#7&6!#a-4va&35a125@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,11 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'app.apps.AppConfig',                #<-- main app
+    'rest_framework',                    #<-- rest framework
+    "corsheaders",                       #<-- django-cors-headers
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",                 #<-- django-cors-headers
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -123,3 +126,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+AUTH_USER_MODEL = 'app.User'
+
+#jango-cors-headers
+CORS_ORIGIN_ALLOW_ALL = True          #CORS_ALLOW_ALL_ORIGINS: True                    
+CORS_ALLOW_CREDENTIALS = True  
