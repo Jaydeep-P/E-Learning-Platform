@@ -1,11 +1,14 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
+from rest_framework import generics
+from rest_framework.permissions import IsAdminUser
+
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
 import jwt, datetime              #<-- pyjwt
 
-from .models import User
-from .serializers import UserSerializer
+from .models import *
+from .serializers import *
 
 # Create your views here.
 
@@ -73,3 +76,52 @@ class LogoutView(APIView):
             'message': 'Logout successful!'
         }
         return response
+
+
+
+class TeacherView(generics.ListCreateAPIView):
+    # permission_classes = [IsAdminUser]
+    queryset = TeacherModel.objects.all()
+    serializer_class = TeacherSerializer
+
+class TeacherDetailView(APIView):
+    def get(self, request, pk):
+        print("Id :", pk)
+        teacher = TeacherModel.objects.get(id=pk)
+        serializer = TeacherSerializer(teacher)
+        return Response(serializer.data)
+
+
+class StudentView(generics.ListCreateAPIView):
+    # permission_classes = [IsAdminUser]
+    queryset = StudentModel.objects.all()
+    serializer_class = StudentSerializer
+
+class StudentDetailView(APIView):
+    def get(self, request, pk):
+        print("Id :", pk)
+        student = StudentModel.objects.get(id=pk)
+        serializer = StudentSerializer(student)
+        return Response(serializer.data)
+
+
+class CourseView(generics.ListCreateAPIView):
+    # permission_classes = [IsAdminUser]
+    queryset = CourseModel.objects.all()
+    serializer_class = CourseSerializer
+
+class CourseDetailView(APIView):
+    def get(self, request, pk):
+        cours = CourseModel.objects.get(id=pk)
+        serializer = CourseSerializer(cours)
+        modules = ModuleModel.objects.filter(course=cours)
+        # print(modules)
+        serializer = ModuleSerializer(modules, many=True)
+        return Response(serializer.data)
+
+
+
+class ModuleView(generics.ListCreateAPIView):
+    # permission_classes = [IsAdminUser]
+    queryset = ModuleModel.objects.all()
+    serializer_class = ModuleSerializer

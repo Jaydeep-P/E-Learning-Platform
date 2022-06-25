@@ -3,7 +3,7 @@
     position: fixed;
     width:200px;
     height:100%;
-    background-color: #fff;
+    background-color: rgb(255, 115, 0);
     box-shadow: 3px 0px 6px 0px rgba(246, 246, 246, 0.75);
     width:70px;
  }
@@ -11,7 +11,7 @@
     position: fixed;
     width:200px;
     height:100%;
-    background-color: #fff;
+    background-color: rgb(255, 115, 0);
     box-shadow: 3px 0px 6px 0px rgba(246, 246, 246, 0.75);
 
  }
@@ -41,16 +41,17 @@
 
 .wrapper>ul>li{
     list-style: none;
+    color: rgb(65, 65, 65);
     font-size: 20px;
     text-decoration: none;
-    opacity: .6;
+
 }
 .wrapper>ul>li:active{
     color: #000;
 }
 
 .wrapper>ul>li>a:hover{
-    color: darkgoldenrod;
+    color: rgb(255, 255, 255);
     font-size: 22px;
     transition: 0.2s;
 }
@@ -79,8 +80,7 @@
 .wrapper>ul>li>a{
     opacity: 0;
 }
-
-  }
+ }
 
 /*headercss*/
 
@@ -138,7 +138,21 @@
 .contentcontainer{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     margin-left:200px;
+}
+
+.assignmentContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.table1{
+    width: 100%;
+    border: #000 1px solid;
 }
 
 .contentwrapper{
@@ -151,16 +165,19 @@
     justify-content: space-evenly;
     align-items: center;
     width:250px;
-    height:100px;
-    background-color: #fff;
+    height:50vh;
+    background-color: rgb(230, 230, 230);
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 3px 0px 6px 0px rgba(246, 246, 246, 0.75);
 }
 
+.categories{
+    padding: 10%;
+}
 
 .categories>h2{
-    color: rgb(70, 105, 70);
+    color: rgb(0, 0, 0);
 }
 
 
@@ -179,4 +196,8 @@
         width: 350px;
     }
 
+}
+
+.links{
+    color: blue;
 }

@@ -1,3 +1,4 @@
+from pyexpat import model
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser       #Custom User Model
 
@@ -76,3 +77,55 @@ class User(AbstractBaseUser):
         "Is the user a member of staff?"
         # Simplest possible answer: All admins are staff
         return self.is_admin
+
+    
+
+class GradeModel(models.Model):
+    grade = models.IntegerField()
+
+    def __str__(self):
+        return str(self.grade)
+
+
+class CourseModel(models.Model):
+    grade = models.ForeignKey(GradeModel, on_delete=models.CASCADE, null=True, blank=True)
+    subject = models.CharField(max_length=255)
+    # curriculum = 
+
+    def __str__(self):
+        return self.subject + " Class" + str(self.grade)
+
+
+class ModuleModel(models.Model):
+    course = models.ForeignKey(CourseModel, on_delete=models.CASCADE)
+    module = models.CharField(max_length=255)
+    # assigments = 
+    completed = models.BooleanField(default=False)
+
+
+    def __str__(self):
+        return self.module  + " Class" + str(self.course.grade)
+
+class StudentModel(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255, null=True, blank=True)
+    grade = models.IntegerField(default=0)
+    # teacher = models.ForeignKey(TeacherModel, on_delete=models.CASCADE)
+    courses = models.ManyToManyField(CourseModel)
+    # assigmetns = models.ManyToManyField(ModuleModel)
+
+    def __str__(self):
+        return self.name
+
+    
+class TeacherModel(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    Name = models.CharField(max_length=255, null=True, blank=True)
+    subject = models.ForeignKey(CourseModel, on_delete=models.CASCADE, null=True, blank=True)
+    students = models.ManyToManyField(StudentModel, blank=True)
+
+    def __str__(self):
+        return self.Name
+
+    
+
