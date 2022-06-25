@@ -1,0 +1,9 @@
+# Virtual Envoronment
+venv/
+env/
+
+# __pycache__
+__pycache__/
+app/__pycache__/
+app/migrations/__pycache__/
+main/__pycache__/
