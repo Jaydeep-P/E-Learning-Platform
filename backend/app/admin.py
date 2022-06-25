@@ -37,3 +37,6 @@ admin.site.register(CourseModel)
 admin.site.register(ModuleModel)
 admin.site.register(TeacherModel)
 admin.site.register(StudentModel)
+
+admin.site.register(QuestionModel)
+admin.site.register(ResponseModel)

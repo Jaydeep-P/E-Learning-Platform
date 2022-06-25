@@ -1,6 +1,8 @@
+import imp
 from django.urls import path
 
-from .views import LoginView, LogoutView, RegisterView, UserView, TeacherView, TeacherDetailView, StudentView, CourseView, CourseDetailView, ModuleView, StudentDetailView
+# from .views import LoginView, LogoutView, RegisterView, UserView, TeacherView, TeacherDetailView, StudentView, CourseView, CourseDetailView, ModuleView, StudentDetailView
+from .views import *
 urlpatterns = [
     path('register/', RegisterView.as_view(), name='register'),
     path('login/', LoginView.as_view(), name='login'),
@@ -18,4 +20,12 @@ urlpatterns = [
     path('courses/<int:pk>', CourseDetailView.as_view(), name='course-detail'),
 
     path('modules/', ModuleView.as_view(), name='modules'),
+
+    # Q&Ans Forum
+    path('qans/', homePageView.as_view(), name='qans'),      
+    path('qans/<int:pk>/', homePageDetailView.as_view(), name='index'),
+    # path('new-question/<int:pk>/', newQuestionView.as_view(), name='new-question'),
+    # path('question/<int:id>', views.questionPage, name='question'),
+    path('reply/', ReplyView.as_view(), name='reply'),
+    # path('reply/<int:pk>', ReplyView.as_view(), name='reply')
 ]

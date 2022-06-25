@@ -1,3 +1,5 @@
+from importlib.metadata import requires
+from multiprocessing import context
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework import generics
@@ -120,8 +122,42 @@ class CourseDetailView(APIView):
         return Response(serializer.data)
 
 
-
 class ModuleView(generics.ListCreateAPIView):
     # permission_classes = [IsAdminUser]
     queryset = ModuleModel.objects.all()
     serializer_class = ModuleSerializer
+
+
+
+# Q&Ans Forum
+class homePageView(generics.ListCreateAPIView):
+    queryset = QuestionModel.objects.all()
+    serializer_class = QAnsSerializer
+
+class homePageDetailView(APIView):
+    def get(self, request, pk):
+        course = CourseModel.objects.get(id=pk)
+        questions = QuestionModel.objects.filter(category=course)
+        serializer = QuestionSerializer(questions, many=True)
+        return Response(serializer.data)
+    def post(self, request, pk):
+        course = CourseModel.objects.get(id=pk)
+        print("COURSE =", pk)
+        user= request.user
+        print("USER = ", user)
+        serializer = newQuestionSerializer(data=request.data, context={'course':pk, 'user':user})
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
+class QuestionView(APIView):
+    def get(self, request, pk):
+        course = CourseModel.objects.get(id=pk)
+        questions = QuestionModel.objects.filter()
+        serializer = QuestionSerializer(questions, many=True)
+        return Response(serializer.data)
+
+class ReplyView(generics.ListCreateAPIView):
+    queryset = ResponseModel.objects.all()
+    serializer_class = ReplySerializer
+

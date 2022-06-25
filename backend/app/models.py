@@ -1,4 +1,5 @@
 from pyexpat import model
+from unicodedata import category
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser       #Custom User Model
 
@@ -102,9 +103,9 @@ class ModuleModel(models.Model):
     # assigments = 
     completed = models.BooleanField(default=False)
 
-
     def __str__(self):
         return self.module  + " Class" + str(self.course.grade)
+
 
 class StudentModel(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -126,6 +127,35 @@ class TeacherModel(models.Model):
 
     def __str__(self):
         return self.Name
+
+
+# Q&Ans Forum
+class QuestionModel(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    body = models.TextField(null=False)
+    category = models.ForeignKey(CourseModel, on_delete=models.SET_NULL, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return str(self.author.name)
+
+    def get_responses(self):
+        return self.responses.filter(parent=None)
+
+class ResponseModel(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    question = models.ForeignKey(QuestionModel, null=False, on_delete=models.CASCADE, related_name='responses')
+    parent = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE)
+    body = models.TextField(null=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.body
+
+    def get_responses(self):
+        return ResponseModel.objects.filter(parent=self)
 
     
 
