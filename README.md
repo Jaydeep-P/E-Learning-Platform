@@ -15,7 +15,7 @@
 Clone the Project :
 
 ```
-git clone https://github.com/shashank725/django-react-auth.git
+git clone https://github.com/cfgmum22/team-56.git
 ```
 
 ### Backend Setup :
