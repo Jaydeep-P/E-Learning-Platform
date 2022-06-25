@@ -29,18 +29,29 @@ export default function Login() {
 
 
     return (
-        <div>
-            <form onSubmit={submit}>
-                <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
-                <input type="email" className="form-control" placeholder="Email" required
+        <div className={styles.divL}>
+         
+            <form  className={styles.formL} onSubmit={submit}>
+            <h1>Please Sign in</h1>
+                <div>
+                    <label >Email:</label>
+                    <div>
+                    <input type="email" size ="6" className="form-control w-75" placeholder="Email" required autofocus
                        onChange={e => setEmail(e.target.value)}
                 />
-
-                <input type="password" className="form-control" placeholder="Password" required
+                    </div>
+                </div>
+               <div>
+                  <label className="form-label">Password:</label>
+                  <div>
+                  <input type="password"  size="6" className="form-control  w-75" placeholder="Password" required autofocus
                        onChange={e => setPassword(e.target.value)}
                 />
-
-                <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                  </div>
+               </div>
+                <div className={styles.buttonL}>
+                <button   className="w-75 btn btn-lg  btn-primary" type="submit">Sign in</button>
+                </div>
             </form>
         </div>
     );
