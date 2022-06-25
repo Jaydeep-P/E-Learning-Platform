@@ -4,10 +4,11 @@ import { useEffect, useState } from 'react';
 import {useRouter} from 'next/router'
 
 export default function Login() {
-  const [email, setEmail] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loggedIn, setLoggedin] = useState(false);
     const router = useRouter();
+
 
 
     let redirect = async () => {
@@ -31,7 +32,7 @@ export default function Login() {
           // setMessage(`Hi ${content.name}`);
           setAuth(true);
       } catch (e) {
-          return;
+        console.error(e)
         // default push to login if not logged in
         // router.push(`/login`)
       }
@@ -39,6 +40,21 @@ export default function Login() {
 
     const submit = async (e) => {
       e.preventDefault();
+
+      //Logout first
+
+      await fetch('http://localhost:8000/api/logout/', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          credentials: 'include',
+          body: JSON.stringify({
+              email,
+              password
+          })
+      });
+
+
+      //Login now
 
       let res = await fetch('http://localhost:8000/api/login/', {
           method: 'POST',
