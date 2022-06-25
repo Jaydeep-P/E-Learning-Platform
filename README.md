@@ -6,7 +6,7 @@
 <a href="https://nextjs.org/" target="blank"><img align="center" src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="next" height="40"/></a>
 </p>
 
-<h4 align="center">The project is made wsing <a href="https://www.djangoproject.com/">Django</a> and <a href="https://nextjs.org/">Next</a>, to get the project started right away just the follwing commands.</h4>
+<h4 align="center">The project is made using <a href="https://www.djangoproject.com/">Django</a> and <a href="https://nextjs.org/">Next JS</a>, to get the project started right away just the follwing commands.</h4>
 
 <br>
 
