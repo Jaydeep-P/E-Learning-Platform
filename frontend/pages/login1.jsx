@@ -46,11 +46,7 @@ export default function Login() {
       await fetch('http://localhost:8000/api/logout/', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
-          credentials: 'include',
-          body: JSON.stringify({
-              email,
-              password
-          })
+          credentials: 'include'
       });
 
 
@@ -86,9 +82,25 @@ export default function Login() {
 
 
     return (
-        <div className={styles.divL}>
          
-            <form  className={styles.formL} onSubmit={submit}>
+          <div className={styles.main}>
+          <div className={styles.container}>
+            <form className="form-signin">
+              <h1 className="h3 mb-3 font-weight-normal">Log in</h1>
+              <label for="inputEmail" className="sr-only">Email address</label>
+              <input type="email" id="inputEmail" className="form-control" placeholder="Email address" required autofocus />
+              <label for="inputPassword" className="sr-only">Password</label>
+              <input type="password" id="inputPassword" className="form-control" placeholder="Password" required />
+              <div className="checkbox mb-3">
+                <label>
+                  <input type="checkbox" value="remember-me" /> Remember me 
+                </label>
+              </div>
+              <button className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+              <p className="mt-5 mb-3 text-muted">&copy; 2020-2024</p>
+            </form>
+            </div>
+            {/* <form  className={styles.formL} onSubmit={submit}>
             <h1>{loggedIn?'Incorrect credentials':'Please Sign in'}</h1>
                 <div>
                     <label >Email:</label>
@@ -109,7 +121,7 @@ export default function Login() {
                 <div className={styles.buttonL}>
                 <button   className="w-75 btn btn-lg  btn-primary" type="submit">Sign in</button>
                 </div>
-            </form>
+            </form> */}
         </div>
     );
 }
