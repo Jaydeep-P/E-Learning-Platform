@@ -40,11 +40,13 @@ export default function Home() {
     });
 
     return (
+     <>
+     <div>
       <div className={styles.container}>
-       <nav className="navbar navbar-light bg-light justify-content-between">
-      <div>
-      <Image src="/t.png" layout="fill"></Image>
-      </div>
+       <nav className="navbar navbar-light bg-light justify-content-between relative">
+        <div className={styles.logo}>
+
+        </div>
     <form className="form-inline">
      
       <button className="btn btn-outline-success my-2 my-sm-0 m-5" type="login"><Link href="/login">
@@ -52,6 +54,7 @@ export default function Home() {
     </Link></button>
     </form>
   </nav>
+  </div>
   <div className='text-center'>
   <p>
   Tinkerhat Innovation Foundation (TIF) is a Sec 8 not for profit company registered under the Companies Act 2013. TIF works in education with focus on improving learning experiences for children in public education system. Our innovative and sustainable STEAM (Science, Technology, Engineering, Arts, Math) programs are designed to improve scientific temperament and create environment for interactive and fun based learning experience.
@@ -61,5 +64,7 @@ export default function Home() {
   </p>
   </div>
       </div>
+     </>
     )
 }
+ 
