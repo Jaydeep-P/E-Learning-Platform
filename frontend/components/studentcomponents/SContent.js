@@ -4,6 +4,7 @@ function SContent() {
     
 
     return (
+        <div>
         <div className={styles.contentcontainer}>
         <div className={styles.contentwrapper}>
             <div className={styles.tabs}>
@@ -21,6 +22,10 @@ function SContent() {
                     <h2>course 3</h2>
                 </div>
             </div>
+        </div>
+        </div>
+        <div>
+            <h5>Assignments</h5>
         </div>
     </div>
     )

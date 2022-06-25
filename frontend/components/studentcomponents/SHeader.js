@@ -8,7 +8,7 @@ function SHeader() {
 			<div className={styles.headwrapper}>
 				<div className={styles.title}>
 					<h2>
-						Hello Teacher
+						Hello Student
 					</h2>
 					<p>welcome to the board.</p>
 				</div>
