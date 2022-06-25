@@ -33,7 +33,7 @@ export default function Home() {
                     setAuth(true);
                 } catch (e) {
                   console.error(e)
-                  router.push(`/login`)
+                 // router.push(`/login`)
                 }
             }
         )();
@@ -42,7 +42,9 @@ export default function Home() {
     return (
       <div className={styles.container}>
        <nav className="navbar navbar-light bg-light justify-content-between">
-        <h4 classname="headinghome m-5">Tinkerhat</h4>
+      <div>
+      <Image src="/t.png" layout="fill"></Image>
+      </div>
     <form className="form-inline">
      
       <button className="btn btn-outline-success my-2 my-sm-0 m-5" type="login"><Link href="/login">
