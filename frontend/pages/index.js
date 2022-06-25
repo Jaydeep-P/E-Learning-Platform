@@ -3,7 +3,7 @@ import Link from 'next/link'
 import login from './login'
 import styles from '../styles/Home.module.css'
 import { useState,useEffect } from 'react';
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 
 export default function Home() {
     const [message, setMessage] = useState('');
@@ -17,12 +17,12 @@ export default function Home() {
         <div className={styles.logo}>
           <Image src='/logotk.png' layout='fill' />
         </div>
-    <form className="form-inline">
+    
      
-      <button className="btn btn-outline-success my-2 my-sm-0 m-5" type="login"><Link href="/login">
-      <a>Login</a>
-    </Link></button>
-    </form>
+      <button className="btn btn-outline-primary my-2 my-sm-0 m-5" type="login" onClick={()=>{router.push('/login')}}>
+      Login
+      </button>
+    
       </nav>
       </div>
       <div className='text-center'>

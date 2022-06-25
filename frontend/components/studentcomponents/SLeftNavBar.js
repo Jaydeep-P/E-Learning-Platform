@@ -1,7 +1,8 @@
 import React from 'react'
 import styles from "../../styles/studentcomponents.module.css"
+import Router, { useRouter } from 'next/router'
 function SLeftNavBar() {
-    
+    const router = useRouter()
 
     return (
         <div className={styles.navcontainer}>
@@ -14,7 +15,7 @@ function SLeftNavBar() {
 						<a href="#">Courses</a>
 					</li>
 					<li>
-						<a href="#">Students Enrolled</a>
+						<a href="#">Teacher contact</a>
 					</li>
 					<li>
 						<a href="#">Materials</a>
@@ -26,7 +27,16 @@ function SLeftNavBar() {
 						<a href="#"> Assignments</a>
 					</li>
 					<li>
-						<a href="#">Logout</a>
+						
+						<button  type="button" className="btn btn-primary" onClick={async ()=>{
+							let res =  fetch('http://localhost:8000/api/logout/', {
+								method: 'POST',
+								headers: {'Content-Type': 'application/json'},
+								credentials: 'include'
+							});
+					  
+							router.push("/")
+						}}>Logout</button>
 					</li>
 				</ul>
 			</div>

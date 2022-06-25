@@ -1,8 +1,9 @@
 import React from 'react'
 import styles from "../../styles/Tleftnavbar.module.css"
+import Router,{useRouter} from 'next/router';
 function TLeftNavbar() {
     
-
+	const router = useRouter();
     return (
         <div className={styles.navcontainer}>
 			<div className={styles.logo}>
@@ -26,7 +27,15 @@ function TLeftNavbar() {
 						<a href="#"> Assignments</a>
 					</li>
 					<li>
-						<a href="#">Logout</a>
+					<button  type="button" className="btn btn-primary" onClick={async ()=>{
+							let res =  fetch('http://localhost:8000/api/logout/', {
+								method: 'POST',
+								headers: {'Content-Type': 'application/json'},
+								credentials: 'include'
+							});
+					  
+							router.push("/")
+						}}>Logout</button>
 					</li>
 				</ul>
 			</div>
