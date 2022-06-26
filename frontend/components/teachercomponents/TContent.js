@@ -8,14 +8,14 @@ const courseList = [
         courseno:1,
         coursename:"Maths",
         zoomlink:"https://jpmchase.zoom.us/wc/join/94589093804",
-        timings:"6 p.m to 7 p.m",
+        timings:"6 to 7 pm",
         announcements:"Today's lecture is on the topic of geometry"
     },
     {
         courseno:2,
         coursename:"Science",
         zoomlink:"https://jpmchase.zoom.us/wc/join/94589093804",
-        timings:"7 p.m to 8 p.m",
+        timings:"7 to 8 pm",
         announcements:"Today we will discuss Human anatomy"
     }
 ]
@@ -80,6 +80,8 @@ function TContent() {
                                 <h2>{course.coursename}</h2>
                                 <p>Class timings: {course.timings}</p>
                                 <span>Meeting Link: <span><a href={course.zoomlink} className={styles.links}>Link</a></span></span>
+                                <hr/>
+                                <p>Announcements</p>
                                 <p>{course.announcements}</p>
                             </div>
                         </div>
