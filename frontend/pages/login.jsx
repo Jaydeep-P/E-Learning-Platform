@@ -87,9 +87,9 @@ export default function Login() {
          
           <div className={styles.main}>
             <div className={styles.logo}>
-          <Image src='/bgl1.jpg' layout='fill'  quality={90}
+          <Image src='/bgl1.jpg' layout='fill'  quality={75}
    blurDataURL="/images/path-to-blur-image.jpg"
-   placeholder="blur" />
+   placeholder="blur"/>
         </div>
           <div className={styles.container} >
             <form className="form-signin" onSubmit={submit}>

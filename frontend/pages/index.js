@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css'
 import { useState,useEffect } from 'react';
 import Router, { useRouter } from 'next/router';
 
-<Image src='/bgl1.jpg' layout='fill' />
+
 
 export default function Home() {
     const [message, setMessage] = useState('');
@@ -58,10 +58,10 @@ Chembur (E), Mumbai, India 400074 </li>
                 <div>
                     <ul className={styles.list1}>
                       <h6>Connect</h6>
-                        <li className={styles.list12}><span className="bi bi-facebook"></span><a href="https://www.facebook.com/nareshit/" target="_blank">facebook</a></li>
-                        <li className={styles.list12}><span className="bi bi-envelope-open"></span><a href="https://nareshit.in/course-schedule/" target="_blank">google</a></li>
-                        <li className={styles.list12}><span className="bi bi-twitter"></span><a href="https://twitter.com/nareshitech?lang=en"  target="_blank">twitter</a></li>
-                        <li className={styles.list12}><span className="bi bi-youtube"></span><a href="https://www.youtube.com/user/nareshtechnologies"  target="_blank">youtube</a></li>
+                        <li className={styles.list12}><span className="bi bi-facebook"></span><a href="https://www.facebook.com/TinkerhatFoundation/" target="_blank">facebook</a></li>
+                        <li className={styles.list12}><span className="bi bi-envelope-open"></span><a href="https://www.instagram.com/tif_india/" target="_blank">instagram</a></li>
+                        <li className={styles.list12}><span className="bi bi-twitter"></span><a href="https://www.linkedin.com/company/tinkerhat-innovation-foundation-tif/"  target="_blank">Linkedin</a></li>
+                        <li className={styles.list12}><span className="bi bi-youtube"></span><a href="https://www.youtube.com/results?search_query=tinkerhat+foundation+"  target="_blank">youtube</a></li>
                     </ul>
                     
                 </div>
