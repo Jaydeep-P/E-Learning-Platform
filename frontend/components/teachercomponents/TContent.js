@@ -8,14 +8,14 @@ const courseList = [
         courseno:1,
         coursename:"Maths",
         zoomlink:"https://jpmchase.zoom.us/wc/join/94589093804",
-        timings:"6 p.m to 7 p.m",
+        timings:"6 to 7 pm",
         announcements:"Today's lecture is on the topic of geometry"
     },
     {
         courseno:2,
         coursename:"Science",
         zoomlink:"https://jpmchase.zoom.us/wc/join/94589093804",
-        timings:"7 p.m to 8 p.m",
+        timings:"7 to 8 pm",
         announcements:"Today we will discuss Human anatomy"
     }
 ]
@@ -23,26 +23,31 @@ const courseList = [
 const assignment = [
     {
         name:"robin",
+        topic:"How do volcanoes work",
         link:"google.com",
         score:9
     },
     {
         name:"bob",
+        topic:"How do volcanoes work",
         link:"google.com",
         score:6
     },
     {
         name:"john",
+        topic:"Anatomy of the gut",
         link:"google.com",
         score:8
     },
     {
         name:"arya",
+        topic:"Anatomy of the gut",
         link:"google.com",
         score:7
     },
     {
         name:"sansa",
+        topic:"Maths unit 2",
         link:"google.com",
         score:9
     }
@@ -80,6 +85,8 @@ function TContent() {
                                 <h2>{course.coursename}</h2>
                                 <p>Class timings: {course.timings}</p>
                                 <span>Meeting Link: <span><a href={course.zoomlink} className={styles.links}>Link</a></span></span>
+                                <hr/>
+                                <p>Announcements</p>
                                 <p>{course.announcements}</p>
                             </div>
                         </div>
@@ -95,6 +102,7 @@ function TContent() {
                 <thead className="thead-dark">
                     <tr>
                     <th scope="col">#</th>
+                    <th scope="col">Assignment topic/subjects</th>
                     <th scope="col">Student</th>
                     <th scope="col">Assignment Link</th>
                     <th scope="col">Score</th>
@@ -107,6 +115,7 @@ function TContent() {
                             return (
                                 <tr key={i}>
                                 <th scope="row">{i+1}</th>
+                                <td>{  details.topic.charAt(0).toUpperCase() + details.topic.slice(1)}</td>
                                 <td>{  details.name.charAt(0).toUpperCase() + details.name.slice(1)}</td>
                                 <td><a href={details.link} className={styles.links}>Link</a></td>
                                 <td><div className="form-group">
