@@ -7,7 +7,7 @@ function TLeftNavbar() {
     return (
         <div className={styles.navcontainer}>
 			<div className={styles.logo}>
-				<h2>NAVBAR</h2>
+				<h2 className= "code">NAVBAR</h2>
 			</div>
 			<div className={styles.wrapper}>
 				<ul>
@@ -43,3 +43,5 @@ function TLeftNavbar() {
     )
 }
 export default TLeftNavbar
+
+
