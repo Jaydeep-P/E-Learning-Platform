@@ -10,7 +10,7 @@ function SHeader() {
 					<h2>
 						Hello Student
 					</h2>
-					<p>welcome to the board.</p>
+					<p className='mb-5'>welcome to the board.</p>
 				</div>
 			</div>
 		</div>

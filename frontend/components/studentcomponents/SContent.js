@@ -146,7 +146,7 @@ function SContent() {
                                 <button type="button" className="btn btn-primary">Upload</button>
                                 </td>
                                 <td>
-                                <button type="button" className="btn btn-primary">Download</button>
+                                <button type="button" className="btn btn-primary txt-white"><a href='../../public/t.png' className={styles.download}  download>download</a></button>
                                 </td>
                                 </tr>
                             )
