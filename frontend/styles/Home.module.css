@@ -3,6 +3,7 @@
     position: relative;
     background-color: gray;
     height:fit-content;
+  
 }
 
 .btn
@@ -46,7 +47,7 @@
  }
  .par{
     display:grid;
-    grid-template-columns:4fr 4fr 4fr;
+    grid-template-columns:6fr 6fr ;
  }
  .list{
     display:block;
@@ -58,4 +59,20 @@
  }
  .list2 a:hover{
     text-decoration:underline;
+}
+
+.list1{
+    float: right;
+   color:white;
+    margin-right:100px;
+}
+.list12
+{
+    text-decoration:none;
+    color: white;
+    
+}
+.list2 a:hover{
+    text-decoration:underline;
+    color:white;
 }

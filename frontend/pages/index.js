@@ -44,23 +44,26 @@ export default function Home() {
             <footer className={styles.footer}>
             <center><h3>TinkerHat</h3></center>
             <div className={styles.par}>
-                <div>
+            <div>
                     <ul className={styles.list}>
-                        <li className={styles.list2}><span className="bi bi-facebook"></span><a href="https://www.facebook.com/nareshit/" target="_blank">facebook</a></li>
-                        <li className={styles.list2}><span className="bi bi-envelope-open"></span><a href="https://nareshit.in/course-schedule/" target="_blank">google</a></li>
-                        <li className={styles.list2}><span className="bi bi-twitter"></span><a href="https://twitter.com/nareshitech?lang=en"  target="_blank">twitter</a></li>
-                        <li className={styles.list2}><span className="bi bi-youtube"></span><a href="https://www.youtube.com/user/nareshtechnologies"  target="_blank">youtube</a></li>
+                        <h6>Contact</h6>
+                        <li className={styles.list2}>Email: tinkerhatfoundation@gmail.com</li>
+                        <li className={styles.list2}>Phonenumber:+918867542773</li>
+                        <li className={styles.list2}>Address :   R No. 1, Ayurved Niketan, RC Marg,
+Chembur (E), Mumbai, India 400074 </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul className={styles.list1}>
+                      <h6>Connect</h6>
+                        <li className={styles.list12}><span className="bi bi-facebook"></span><a href="https://www.facebook.com/nareshit/" target="_blank">facebook</a></li>
+                        <li className={styles.list12}><span className="bi bi-envelope-open"></span><a href="https://nareshit.in/course-schedule/" target="_blank">google</a></li>
+                        <li className={styles.list12}><span className="bi bi-twitter"></span><a href="https://twitter.com/nareshitech?lang=en"  target="_blank">twitter</a></li>
+                        <li className={styles.list12}><span className="bi bi-youtube"></span><a href="https://www.youtube.com/user/nareshtechnologies"  target="_blank">youtube</a></li>
                     </ul>
                     
                 </div>
-                <div>
-                    <ul className={styles.list}>
-                        <li className={styles.list2}>Name:Naresh Institute</li>
-                        <li className={styles.list2}>Email:info@nareshit.com</li>
-                        <li className={styles.list2}>Phonenumber:+91-xxxxxxxxxx</li>
-                        <li className={styles.list2}>Address : Sr nagar, Hyderabad, Telangana, India </li>
-                    </ul>
-                </div>
+              
 
             </div>
             
