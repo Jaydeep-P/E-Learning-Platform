@@ -87,12 +87,14 @@ export default function Login() {
          
           <div className={styles.main}>
             <div className={styles.logo}>
-          <Image src='/bgl1.jpg' layout='fill' />
+          <Image src='/bgl1.jpg' layout='fill'  quality={90}
+   blurDataURL="/images/path-to-blur-image.jpg"
+   placeholder="blur" />
         </div>
           <div className={styles.container} >
             <form className="form-signin" onSubmit={submit}>
               <div className={styles.loginlogo}>
-            <Image  src='/loginlogo.jpg' width="60x" height="60px"/>
+            <Image  src='/loginlogo.jpg' width="60x" height="60px" />
           </div>
               <h1 className="h3 mt-3 mb-3 font-weight-normal">Log in</h1>
               <label htmlFor="inputEmail" className="sr-only">Email address</label>
