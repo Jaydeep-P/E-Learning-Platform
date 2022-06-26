@@ -7,10 +7,9 @@ function Theader() {
         <div className={styles.headcontainer}>
 			<div className={styles.headwrapper}>
 				<div className={styles.title}>
-					<h2>
-						Hello Teacher
-					</h2>
-					<p>welcome to the board.</p>
+					<h4 className= "code">
+						Hello Teacher, welcome to the board.
+					</h4>
 				</div>
 			</div>
 		</div>

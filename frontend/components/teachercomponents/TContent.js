@@ -80,14 +80,14 @@ function TContent() {
             {
                 courseList.map((course)=>{
                     return (
-                        <div className={styles.tabs}>
-                            <div className={styles.categories}>
-                                <h2>{course.coursename}</h2>
-                                <p>Class timings: {course.timings}</p>
-                                <span>Meeting Link: <span><a href={course.zoomlink} className={styles.links}>Link</a></span></span>
+                        <div>
+                            <div className="job-listing">
+                                <h2 className= "code">{course.coursename}</h2>
+                                <p className= "code">Class timings: {course.timings}</p>
+                                <span className= "code">Meeting Link: <span><a href={course.zoomlink} className={styles.links}>Link</a></span></span>
                                 <hr/>
-                                <p>Announcements</p>
-                                <p>{course.announcements}</p>
+                                <p className= "code">Announcements</p>
+                                <p className= "code">{course.announcements}</p>
                             </div>
                         </div>
                     )
@@ -96,16 +96,16 @@ function TContent() {
         </div>
         <hr/>
         <div className={styles.assignmentContainer}>
-            <h1>Assignments</h1>
+            <h1 className= "code">Assignments</h1>
             <div className={styles.table1}>
             <table className="table">
                 <thead className="thead-dark">
                     <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Assignment topic/subjects</th>
-                    <th scope="col">Student</th>
-                    <th scope="col">Assignment Link</th>
-                    <th scope="col">Score</th>
+                    <th scope="col" className= "code">#</th>
+                    <th scope="col" className= "code">Assignment topic/subjects</th>
+                    <th scope="col" className= "code">Student</th>
+                    <th scope="col" className= "code">Assignment Link</th>
+                    <th scope="col" className= "code">Score</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -115,10 +115,10 @@ function TContent() {
                             return (
                                 <tr key={i}>
                                 <th scope="row">{i+1}</th>
-                                <td>{  details.topic.charAt(0).toUpperCase() + details.topic.slice(1)}</td>
-                                <td>{  details.name.charAt(0).toUpperCase() + details.name.slice(1)}</td>
-                                <td><a href={details.link} className={styles.links}>Link</a></td>
-                                <td><div className="form-group">
+                                <td className= "code">{  details.topic.charAt(0).toUpperCase() + details.topic.slice(1)}</td>
+                                <td className= "code">{  details.name.charAt(0).toUpperCase() + details.name.slice(1)}</td>
+                                <td className= "code"><a href={details.link} className={styles.links}>Link</a></td>
+                                <td className= "code"><div className="form-group">
                                     <label for="exampleInputEmail1">Score</label>
                                     <input type="Score" className="form-control" id="exampleInputScore1" aria-describedby="ScoreHelp" placeholder="Enter Score Out of 10" />
                                     
