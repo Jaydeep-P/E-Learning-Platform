@@ -100,7 +100,7 @@ function SContent() {
                             <div className={styles.categories}>
                                 <h2>{course.coursename}</h2>
                                 <p>Timings: {course.timings}</p>
-                                <span>Meeting Link: <span><a href={course.zoomlink} className={styles.links}>Link</a></span></span>
+                                <span className= "code">Meeting Link: <span><a href={course.zoomlink} className={styles.links}><button type="button" className="btn btn-primary">Join</button></a></span></span>
                                 <hr/>
                                 <p>Course Progress</p>
                                 <div className="progress" style={{backgroundColor: "white"}}>

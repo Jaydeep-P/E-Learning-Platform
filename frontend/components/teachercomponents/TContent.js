@@ -84,7 +84,7 @@ function TContent() {
                             <div className="job-listing">
                                 <h2 className= "code">{course.coursename}</h2>
                                 <p className= "code">Class timings: {course.timings}</p>
-                                <span className= "code">Meeting Link: <span><a href={course.zoomlink} className={styles.links}>Link</a></span></span>
+                                <span className= "code">Meeting Link: <span><a href={course.zoomlink} className={styles.links}><button type="button" className="btn btn-primary">Join Meeting</button></a></span></span>
                                 <hr/>
                                 <p className= "code">Announcements</p>
                                 <p className= "code">{course.announcements}</p>
@@ -117,7 +117,8 @@ function TContent() {
                                 <th scope="row">{i+1}</th>
                                 <td className= "code">{  details.topic.charAt(0).toUpperCase() + details.topic.slice(1)}</td>
                                 <td className= "code">{  details.name.charAt(0).toUpperCase() + details.name.slice(1)}</td>
-                                <td className= "code"><a href={details.link} download className={styles.links}>Link</a></td>
+                                <td className= "code"><a href={details.link} download className={styles.links}>
+                                <button type="button" className="btn btn-primary">Download</button></a></td>
                                 <td className= "code"><div className="form-group">
                                     <label for="exampleInputEmail1">Score</label>
                                     <input type="Score" className="form-control" id="exampleInputScore1" aria-describedby="ScoreHelp" placeholder="Enter Score Out of 10" />
