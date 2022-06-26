@@ -4,6 +4,9 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework import generics
 from rest_framework.permissions import IsAdminUser
+from rest_framework import viewsets
+from rest_framework import status
+from rest_framework.parsers import MultiPartParser, FormParser
 
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
@@ -111,6 +114,7 @@ class CourseView(generics.ListCreateAPIView):
     # permission_classes = [IsAdminUser]
     queryset = CourseModel.objects.all()
     serializer_class = CourseSerializer
+
 
 class CourseDetailView(APIView):
     def get(self, request, pk):

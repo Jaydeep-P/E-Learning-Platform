@@ -55,9 +55,22 @@ class CourseSerializer(serializers.ModelSerializer):
     class Meta:
         model = CourseModel
         fields = '__all__'#['id', 'grade', 'subject']
+
+    # def validate(self, data):
+    #     print(data)
+    #     print(self.context)
+    #     if data.get('body') is None:
+    #         raise serializers.validationError("Empty Form !")
+    #     # data['author'] = User.objects.filter(email=self.context.get('user'))
+    #     data['category'] = CourseModel.objects.get(id=self.context.get('course')) # self.context.get('course')
+    #     print(data)
+    #     return data
+
     
 
 class ModuleSerializer(serializers.ModelSerializer):
+    grade = serializers.CharField(source='course.grade')
+    course = serializers.CharField(source='course.subject')
     class Meta:
         model = ModuleModel
         fields = '__all__'#['course', 'module', 'completed']
