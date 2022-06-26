@@ -201,7 +201,16 @@
 .links{
     color: blue;
 }
+<<<<<<< HEAD
 .download
 {
     color: white;
+=======
+
+
+.code{
+    display: flex;
+    cursor: pointer;
+    
+>>>>>>> 3ff950fdca632bebecd9492fda5c7699bfd4233b
 }

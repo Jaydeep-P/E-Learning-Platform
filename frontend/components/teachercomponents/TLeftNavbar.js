@@ -21,10 +21,10 @@ function TLeftNavbar() {
 						<a href = "#" className= "code">Materials</a>
 					</li>
 					<li>
-					<a href = "#" className= "code"> Zoom Links</a>
+					<a href = "#" className= "code">Zoom Links</a>
 					</li>
                     <li>
-					<a href = "#" className= "code"> Assignments</a>
+					<a href = "#" className= "code">Assignments</a>
 					</li>
 					<li>
 					<button  type="button" className="btn btn-primary" onClick={async ()=>{
