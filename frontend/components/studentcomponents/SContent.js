@@ -126,6 +126,7 @@ function SContent() {
                     <th scope="col">Assignment Title</th>
                     <th scope="col">Due Date</th>
                     <th scope="col">Upload Assignment here</th>
+                    <th scope="col">download Assignment here</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -141,6 +142,9 @@ function SContent() {
                                 </td>
                                 <td>
                                 <button type="button" className="btn btn-primary">Upload</button>
+                                </td>
+                                <td>
+                                <button type="button" className="btn btn-primary">download</button>
                                 </td>
                                 </tr>
                             )
