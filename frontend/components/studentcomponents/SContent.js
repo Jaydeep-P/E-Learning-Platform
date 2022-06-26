@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react'
 import styles from "../../styles/Tleftnavbar.module.css"
 
 
+
 // Prop data for demo purposes
 const courseList = [
     {
         courseno:1,
+        progress:53,
         coursename:"Maths",
         zoomlink:"https://jpmchase.zoom.us/wc/join/94589093804",
         timings:"6 to 7 p.m",
@@ -13,6 +15,7 @@ const courseList = [
     },
     {
         courseno:2,
+        progress:30,
         coursename:"Science",
         zoomlink:"https://jpmchase.zoom.us/wc/join/94589093804",
         timings:"7 to 8 p.m",
@@ -20,6 +23,7 @@ const courseList = [
     },
     {
         courseno:3,
+        progress:90,
         coursename:"English",
         zoomlink:"https://jpmchase.zoom.us/wc/join/94589093804",
         timings:"5 to 6 p.m",
@@ -27,6 +31,7 @@ const courseList = [
     },
     {
         courseno:4,
+        progress:12,
         coursename:"Python",
         zoomlink:"https://jpmchase.zoom.us/wc/join/94589093804",
         timings:"9 to 10 p.m",
@@ -95,8 +100,14 @@ function SContent() {
                                 <p>Timings: {course.timings}</p>
                                 <span>Meeting Link: <span><a href={course.zoomlink} className={styles.links}>Link</a></span></span>
                                 <hr/>
+                                <p>Course Progress</p>
+                                <div className="progress" style={{backgroundColor: "white"}}>
+                                    <div className="progress-bar progress-bar-striped" role="progressbar" style={{width: `${course.progress}%`}} aria-valuenow={`${course.progress}`} aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <hr/>
                                 <p>Announcements</p>
-                                <p>{course.announcements}</p>
+                                
+                    <p>{course.announcements}</p>
                             </div>
                         </div>
                     )
