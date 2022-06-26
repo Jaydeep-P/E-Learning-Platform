@@ -46,10 +46,10 @@ Prerequisites
     python manage.py migrate
     ```
 
-7. Run the development server
+7. Run the server with development settings
 
     ```
-    python manage.py runserver
+    python3 manage.py runserver --settings=main.dev-settings
     ```
 <br>
 

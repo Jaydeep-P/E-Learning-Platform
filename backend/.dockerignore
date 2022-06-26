@@ -1,0 +1,8 @@
+.git/
+
+# Virtualenv
+venv/
+env/
+
+db.sqlite3
+data/
