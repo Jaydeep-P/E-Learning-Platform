@@ -86,6 +86,8 @@ function SContent() {
     //     requestList()
     // },[])
 
+    
+
 
     return (
         <div className={styles.contentcontainer}>
@@ -144,7 +146,7 @@ function SContent() {
                                 <button type="button" className="btn btn-primary">Upload</button>
                                 </td>
                                 <td>
-                                <button type="button" className="btn btn-primary">download</button>
+                                <button type="button" className="btn btn-primary">Download</button>
                                 </td>
                                 </tr>
                             )

@@ -24,31 +24,31 @@ const assignment = [
     {
         name:"robin",
         topic:"How do volcanoes work",
-        link:"google.com",
+        link:"/t.png",
         score:9
     },
     {
         name:"bob",
         topic:"How do volcanoes work",
-        link:"google.com",
+        link:"/t.png",
         score:6
     },
     {
         name:"john",
         topic:"Anatomy of the gut",
-        link:"google.com",
+        link:"/t.png",
         score:8
     },
     {
         name:"arya",
         topic:"Anatomy of the gut",
-        link:"google.com",
+        link:"/t.png",
         score:7
     },
     {
         name:"sansa",
         topic:"Maths unit 2",
-        link:"google.com",
+        link:"/t.png",
         score:9
     }
 
@@ -117,7 +117,7 @@ function TContent() {
                                 <th scope="row">{i+1}</th>
                                 <td className= "code">{  details.topic.charAt(0).toUpperCase() + details.topic.slice(1)}</td>
                                 <td className= "code">{  details.name.charAt(0).toUpperCase() + details.name.slice(1)}</td>
-                                <td className= "code"><a href={details.link} className={styles.links}>Link</a></td>
+                                <td className= "code"><a href={details.link} download className={styles.links}>Link</a></td>
                                 <td className= "code"><div className="form-group">
                                     <label for="exampleInputEmail1">Score</label>
                                     <input type="Score" className="form-control" id="exampleInputScore1" aria-describedby="ScoreHelp" placeholder="Enter Score Out of 10" />
