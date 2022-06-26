@@ -109,9 +109,9 @@ function TContent() {
                                 <th scope="row">{i+1}</th>
                                 <td>{  details.name.charAt(0).toUpperCase() + details.name.slice(1)}</td>
                                 <td><a href={details.link} className={styles.links}>Link</a></td>
-                                <td><div class="form-group">
+                                <td><div className="form-group">
                                     <label for="exampleInputEmail1">Score</label>
-                                    <input type="Score" class="form-control" id="exampleInputScore1" aria-describedby="ScoreHelp" placeholder="Enter Score Out of 10" />
+                                    <input type="Score" className="form-control" id="exampleInputScore1" aria-describedby="ScoreHelp" placeholder="Enter Score Out of 10" />
                                     
                                 </div>
                                 </td>

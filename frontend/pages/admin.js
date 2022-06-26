@@ -2,6 +2,65 @@ import Head from 'next/head'
 import styles from '../styles/Admin.module.css'
 import TLeftNavbar from '../components/teachercomponents/TLeftNavbar'
 
+
+//All this data is to be brought in via API calls
+//this is dummy data for demonstration purposes
+const studentList = [
+  {
+    name:"bob"
+  },
+  {
+    name:"alice"
+  },
+  {
+    name:"katie"
+  },
+  {
+    name:"jamie"
+  },
+  {
+    name:"tina"
+  },
+  {
+    name:"jeremy"
+  },
+  {
+    name:"rahul"
+  },
+  {
+    name:"munawar"
+  }
+]
+
+const teacherList = [
+  {
+    name:"bob"
+  },
+  {
+    name:"alice"
+  },
+  {
+    name:"katie"
+  },
+  {
+    name:"jamie"
+  }
+]
+
+const resourceList = [
+  'Math Unit 1.pdf',
+  'Math Unit 2.pdf',
+  'Math Unit 3.pdf',
+  'Math Unit 4.pdf',
+  'Math Unit 5.pdf',
+  'Math Unit 6.pdf',
+  
+  'Science Unit 1.pdf',
+  'Science Unit 2.pdf',
+  'Science Unit 3.pdf',
+  'Science Unit 4.pdf',
+]
+
 export default function Admin() {
   return (
     <div className={styles.container}>
@@ -12,50 +71,135 @@ export default function Admin() {
       </Head>
 
       <main className={styles.main}>
-        <div>
-          <div>
-            <TLeftNavbar/>
-          </div>
+        
+        <div><TLeftNavbar /></div>
+        <div className={styles.content}>
+          <h1>Admin/Management tool</h1>
+          
           <div className={styles.form}>
-          <div>
-          <form className={styles.form1}>
-            <div>
-              <label className="form-label">TeacherName</label>
-              <div>
-                <input type="text" className="form-input" placeholder="enter the teacher name"  autofocus required></input>
+          <div className={styles.section}>
+            <h3>Register a new Teacher</h3>
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
               </div>
-            </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Name</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name of teacher" />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Subjects</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter list of subjects" />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Number of hours</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Number of volunteer hours" />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Teacher Qualifications</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Qualifications" />
+              </div>
+              <br/>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div> 
 
-            <div>
-              <label className="form-label">SubjectName</label>
-              <div>
-                <input type="text" className="form-input" placeholder="enter the subject name" autofocus required></input>
+          <div className={styles.section}>
+            <h3>Register a new Student</h3>
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
               </div>
-            </div>
-          </form>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Name</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name of student" />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Class (K-12)</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Class" />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">School Name</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter School Name" />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Courses</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Course List" />
+              </div>
+              <br/>
+              
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>  
+        </div>
+        
+        <div className={styles.data}>
+          <h3 className={styles.heading}>Data management</h3>
+
+        <div className={styles.form}>
+          <div className={styles.section}>
+            <h5>List of all existing teachers</h5>
+            <ul className="list-group">
+            {
+              teacherList.map((el,i)=>{
+                return <li className="list-group-item" key={i}>{el.name}</li>
+              })
+            }
+          </ul>
+          </div> 
+
+          <div className={styles.section}>
+          <h5>List of all existing Students</h5>
+          <ul className="list-group">
+            {
+              studentList.map((el,i)=>{
+                return <li className="list-group-item" key={i}>{el.name}</li>
+              })
+            }
+          </ul>
+          
+
           </div>
-
-
-          <div className={styles.form2}>
-          <form >
-            <div>
-              <label className="form-label">StudentName</label>
-              <div>
-                <input type="text" className="form-input" placeholder="enter the student name"  autofocus required></input>
-              </div>
-            </div>
-
-            <div>
-              <label className="form-label">Grade</label>
-              <div>
-                <input type="text" className="form-input" placeholder="grade" autofocus required></input>
-              </div>
-            </div>
-          </form>
-          </div>
-
+            
+        </div>
 
         </div>
+
+        <div className={styles.filemgmt}>
+            <h3 className={styles.heading}>Learning resource management</h3>
+
+            <div className="mb-3">
+              <label htmlFor="formFile" className="form-label">Upload new resources (PDFs smaller than 50Mb)</label>
+              <input className="form-control" type="file" id="formFile" />
+            </div>
+
+            <div>
+              <h5 className={styles.heading} >List of all resources on server</h5>
+              <div>
+              <ul className="list-group">
+                {
+                  resourceList.map((el,i)=>{
+                    return <li style={{display:'flex',justifyContent:"space-between",padding:"auto 3%"}} className="list-group-item" key={i}><span>{el}</span> <button type="button" className="btn btn-primary">Link</button></li>
+                  })
+                }
+              </ul>
+              </div>
+            </div>
+
+        </div>
+
         </div>
       </main>
     </div>

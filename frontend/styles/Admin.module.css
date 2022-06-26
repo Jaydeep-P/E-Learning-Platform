@@ -1,6 +1,16 @@
-.mennu{
-    display:grid;
-    grid-template-columns:4fr 4fr 4fr;
+.container{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
 }
 .navcontainer{
     position: fixed;
@@ -8,15 +18,51 @@
     height:100%;
     background-color: rgb(255, 115, 0);
     box-shadow: 3px 0px 6px 0px rgba(246, 246, 246, 0.75);
-    width:70px;
  }
- .navcontainer{
+ /* .navcontainer{
     position: fixed;
     width:200px;
     height:100%;
     background-color: rgb(255, 115, 0);
     box-shadow: 3px 0px 6px 0px rgba(246, 246, 246, 0.75);
+ } */
 
+ .form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    width: 100%;
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+ }
+
+ .filemgmt{
+    width: 100%;
+ }
+
+ .heading{
+    margin-left: 3em;
+ }
+
+ .section{
+    padding: 0 50px;
+    flex-grow: 1;
+ }
+
+ .data{
+    width: 100%;
+ }
+ 
+ .content{
+    display: flex;
+    margin-left: 200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
  }
 
  .wrapper{
