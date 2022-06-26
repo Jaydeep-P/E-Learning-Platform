@@ -74,73 +74,73 @@ export default function Admin() {
         
         <div><TLeftNavbar /></div>
         <div className={styles.content}>
-          <h1>Admin/Management tool</h1>
+          <h1 className= "code">ADMIN/MANAGEMENT TOOL</h1>
           
           <div className={styles.form}>
-          <div className={styles.section}>
-            <h3>Register a new Teacher</h3>
+          <div className="job-listing">
+            <h3 className= "code">Register a new Teacher</h3>
             <form>
               <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
+                <label for="exampleInputEmail1" className= "code">Email address</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <small id="emailHelp" class="form-text text-muted" >We'll never share your email with anyone else.</small>
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
+                <label for="exampleInputPassword1" className= "code">Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">Name</label>
+                <label for="exampleInputEmail1" className= "code">Name</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name of teacher" />
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">Subjects</label>
+                <label for="exampleInputEmail1" className= "code">Subjects</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter list of subjects" />
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">Number of hours</label>
+                <label for="exampleInputEmail1" className= "code">Number of hours</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Number of volunteer hours" />
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">Teacher Qualifications</label>
+                <label for="exampleInputEmail1" className= "code">Teacher Qualifications</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Qualifications" />
               </div>
               <br/>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary" className= "code">Submit</button>
             </form>
           </div> 
 
-          <div className={styles.section}>
-            <h3>Register a new Student</h3>
+          <div className="job-listing">
+            <h3 className= "code">Register a new Student</h3>
             <form>
               <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
+                <label for="exampleInputEmail1" className= "code">Email address</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
+                <label for="exampleInputPassword1" className= "code">Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">Name</label>
+                <label for="exampleInputEmail1" className= "code">Name</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name of student" />
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">Class (K-12)</label>
+                <label for="exampleInputEmail1" className= "code">Class (K-12)</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Class" />
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">School Name</label>
+                <label for="exampleInputEmail1" className= "code">School Name</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter School Name" />
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">Courses</label>
+                <label for="exampleInputEmail1" className= "code">Courses</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Course List" />
               </div>
               <br/>
               
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary" className= "code">Submit</button>
             </form>
           </div>  
         </div>
@@ -149,8 +149,8 @@ export default function Admin() {
           <h3 className={styles.heading}>Data management</h3>
 
         <div className={styles.form}>
-          <div className={styles.section}>
-            <h5>List of all existing teachers</h5>
+        <div className="job-listing">
+            <h5 className= "code">List of all existing teachers</h5>
             <ul className="list-group">
             {
               teacherList.map((el,i)=>{
@@ -160,8 +160,8 @@ export default function Admin() {
           </ul>
           </div> 
 
-          <div className={styles.section}>
-          <h5>List of all existing Students</h5>
+          <div className="job-listing">
+          <h5 className= "code">List of all existing Students</h5>
           <ul className="list-group">
             {
               studentList.map((el,i)=>{
