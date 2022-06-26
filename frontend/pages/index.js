@@ -5,6 +5,8 @@ import styles from '../styles/Home.module.css'
 import { useState,useEffect } from 'react';
 import Router, { useRouter } from 'next/router';
 
+<Image src='/bgl1.jpg' layout='fill' />
+
 export default function Home() {
     const [message, setMessage] = useState('');
     const [auth, setAuth] = useState(false);
