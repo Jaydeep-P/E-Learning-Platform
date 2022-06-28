@@ -16,12 +16,21 @@
 
 <br>
 
+## Demo Images :
+
+![alt text](/images/1.png)
+
+![alt text](/images/2.png)
+
+![alt text](/images/3.png)
+
+
 ## Let's get started !
 
 Clone the Project :
 
 ```
-git clone https://github.com/cfgmum22/team-56.git
+git clone [repo_link]
 ```
 
 ### Backend Setup :
